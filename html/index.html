@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lifeinvader by NMT-Studios</title>
+	<style id="applicationStylesheet" type="text/css">
+		
+
+		body::-webkit-scrollbar {
+			display: none;
+		}
+
+		body {
+			user-select: none;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+		}
+
+		.mediaViewInfo {
+			--web-view-name: Canvas;
+			--web-view-id: Canvas;
+			--web-scale-to-fit: true;
+			--web-scale-to-fit-type: width;
+			--web-enable-scale-up: true;
+			--web-scale-on-resize: true;
+			--web-center-vertically: true;
+			--web-enable-deep-linking: true;
+		}
+
+		:root {
+			--web-view-ids: Canvas;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			border: none;
+		}
+
+		#Canvas {
+			position: absolute;
+			width: 1920px;
+			height: 1080px;
+			background-color: rgba(0, 0, 0, 0);
+			overflow: hidden;
+			--web-view-name: Canvas;
+			--web-view-id: Canvas;
+			--web-scale-to-fit: true;
+			--web-scale-to-fit-type: width;
+			--web-enable-scale-up: true;
+			--web-scale-on-resize: true;
+			--web-center-vertically: true;
+			--web-enable-deep-linking: true;
+		}
+
+		#base {
+			position: absolute;
+			width: 1920px;
+			height: 1080px;
+		}
+
+		#content ul li{
+			list-style-type:none;
+		}
+
+		.bg {
+			box-sizing: border-box;
+
+			position: absolute;
+			width: 831px;
+			height: 442px;
+			left: 544px;
+			top: 319px;
+
+			background: rgba(13, 13, 13, 0.94);
+			border: 3px solid rgba(129, 129, 129, 0.3);
+			border-radius: 15px;
+		}
+
+		.inv-icon {
+			position: absolute;
+			width: 59px;
+			height: 59px;
+			left: 40px;
+			top: 35px;
+		}
+
+		.first-text {
+			position: absolute;
+			width: 346px;
+			height: 85px;
+			left: 249px;
+			top: 43px;
+
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 24px;
+			text-align: center;
+			text-transform: uppercase;
+
+			color: #929292;
+  		}
+
+		.second-text {
+			position: absolute;
+			width: 346px;
+			height: 51px;
+			left: 249px;
+			top: 67px;
+
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 19px;
+			text-align: center;
+			text-transform: uppercase;
+
+			color: #3A87FF;
+  		}
+
+		.close {
+			position: absolute;
+			left: 94.1%;
+			right: 3.01%;
+			top: 5.2%;
+			bottom: 89.37%;
+		}
+
+		.close:hover {
+    		transform: scale(1.1);
+    		transition: 500ms;
+    		cursor: pointer;
+		}
+
+		.info-h {
+			position: absolute;
+			width: 346px;
+			height: 28px;
+			left: 249px;
+			top: 323px;
+
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 700;
+			font-size: 17px;
+			line-height: 21px;
+			text-align: center;
+			text-transform: uppercase;
+
+			background: linear-gradient(180deg, #47CC00 29.68%, #000000 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+  		}
+
+		#line {
+			position: absolute;
+			width: 250px;
+			height: 4px;
+			left: 297px;
+			top: 347px;
+
+			background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.462) 0%, rgba(217, 217, 217, 0) 100%);
+		}
+
+		.info-text {
+			position: absolute;
+			width: 579px;
+			height: 70px;
+			left: 126px;
+			top: 361px;
+
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 500;
+			font-size: 10px;
+			line-height: 12px;
+			text-align: center;
+
+			color: #707070;
+  		}
+
+		.erstellen-button {
+			box-sizing: border-box;
+
+			position: absolute;
+			width: 220px;
+			height: 53px;
+			left: 539px;
+			top: 148px;
+
+			background: linear-gradient(90deg, rgba(32, 32, 32, 0.06) 0%, #151515 100%);
+			border: 2px solid #3A87FF;
+			border-radius: 17px;
+		}
+
+		.erstellen-button:hover {
+    		transform: scale(1.07);
+    		transition: 500ms;
+    		cursor: pointer;
+			background: linear-gradient(180deg, rgba(89, 255, 0, 0.1) 0%, rgba(0, 194, 43, 0) 100%), linear-gradient(90deg, rgba(32, 32, 32, 0.06) 0%, #151515 100%);
+		}
+
+		.erstellen-text {
+			position: absolute;
+			width: 346px;
+			height: 23px;
+			left: -63px;
+			top: 13px;
+
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 24px;
+			text-align: center;
+			text-transform: uppercase;
+
+			color: #929292;
+		}
+
+		.info-icon {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			left: 509px;
+			top: 237px;
+		}
+
+		.warning-text {
+			position: absolute;
+			width: 249px;
+			height: 35px;
+			left: 540px;
+			top: 230px;
+
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 500;
+			font-size: 9.2px;
+			line-height: 11px;
+			text-align: justify;
+
+			color: #848484;
+		}
+
+		.text-box {
+			box-sizing: border-box;
+
+			position: absolute;
+			width: 416px;
+			height: 136px;
+			left: 54px;
+			top: 140px;
+
+			background: rgba(27, 27, 27, 0.76);
+			border: 1px solid rgba(129, 129, 129, 0.08);
+		}
+
+		#input {
+    		position: absolute;
+			width: 366px;
+			left: 23px;
+			top: 17px;
+    		background: none;
+    		border: none;
+    		outline: none;
+    		color: #707070;
+		}
+
+		.eingabe {
+			position: absolute;
+			height: 102px;
+
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 17px;
+
+    		resize: none;
+			cursor: pointer;
+		}
+
+		::-webkit-scrollbar {
+    		width: 8px;
+    		height: 0px;
+		}
+
+		::-webkit-scrollbar-track {
+    		background-color: #2b2929;
+		}
+
+		::-webkit-scrollbar-thumb {
+    		background-color: #3A87FF;
+		}
+
+	</style>
+	<script id="applicationScript" type="text/javascript" src="rescale.js"></script>
+</head>
+
+<body>
+
+	<div id="Canvas">
+
+		<div id="base">
+
+			<div class="bg">
+				<img class="inv-icon" src="icons/inv_logo.svg"/>
+				<p><span class="first-text">WERBUNG</span></p>
+				<p><span class="second-text">SCHALTEN</span></p>
+				<img class="close" src="icons/close.svg">
+				<p><span class="info-h">INFORMATIONEN</span></p>
+				<div id="line"></div>
+				<p><span class="info-text">Bei Problemen oder ähnlichem melde dich doch gerne bei unseren Mitarbeitern. Achte darauf das du immer genu Bargeld dabei hast</span></p>
+
+				<div class="erstellen-button">
+					<p><span class="erstellen-text">ERSTELLEN</span></p>
+				</div>
+
+				<img class="info-icon" src="icons/info.svg"/>
+				<p><span class="warning-text">Achtung, sobald du deine Werbeanzeige abschickst, werden dir dafür sofort 500$ von deinem Bargeld abgezogen und deine Werbung wird für alle sichtbar!</span></p>
+				
+				<div class="text-box">
+					<textarea id="input" spellcheck="false" maxlength='250' class="eingabe" cols="40" rows="5" placeholder="Schreibe hier deinen Werbetext..."></textarea>
+				</div>
+			</div>
+		
+		</div>
+
+	</div>
+
+</body>
+<script src="script.js"></script>
+</html>
